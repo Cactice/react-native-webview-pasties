@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,WebView } from 'react-native';
+import { StyleSheet, Text, View,WebView, TouchableOpacity } from 'react-native';
 import './src/functions/scrollResponse'
 
 
@@ -49,10 +49,29 @@ export default class App extends React.Component {
       onMessage          = {(event)=>{
         var jsonObj = JSON.parse(event.nativeEvent.data)
         this.setState({scrollPositionY : -jsonObj.data.y})
-        console.log(jsonObj.data)
       }}
       />
-      <View style={{position: 'absolute', width: 30, height: 50, left: 10, top: this.state.scrollPositionY+200, backgroundColor: '#0000FF'}}/>
+      <View style={{
+        position       : 'absolute',
+        alignSelf      : 'center',
+        borderRadius   : 10,
+        borderWidth    : 1,
+        borderColor    : 'transparent',
+        width          : 300,
+        height         : 50,
+        top            : this.state.scrollPositionY+550,
+        backgroundColor: 'limegreen',
+        alignItems     : 'center',
+        justifyContent : 'center',
+        }}>
+        <TouchableOpacity
+        onPress = {()=>{
+          alert('Native Button Tapped!!')
+        }}
+        >
+        <Text style={{color : 'white', fontSize:20}}> Native Button </Text>
+        </TouchableOpacity>
+        </View>
       </View>
     );
   }
