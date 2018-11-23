@@ -12,5 +12,9 @@ No npm package has been published yet but I'm working on releasing it.
 # Demo
 ![demo](https://user-images.githubusercontent.com/14835424/48332580-be2efa00-e697-11e8-853a-76103660b423.gif)
 
+# Why is it laggy??
+I'm getting the scroll position based on js injected code and Post message.
+I'd have to write some native code to fix the issue.
+
 # Inspiration
 https://medium.com/rendez-voo/migrating-incrementally-from-a-react-app-to-react-native-part-1-of-2-4566626e4ac5
